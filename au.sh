@@ -67,8 +67,8 @@ case $plang in
 		dnsapi=""
 		key=$HWY_KEY
 		token=$HWY_TOKEN
-    exit 
-  elif [[ "$pdns" == "godaddy" ]] ;then 
+		exit 
+	elif [[ "$pdns" == "godaddy" ]] ;then 
 		dnsapi="$PATH/php-version/godaddydns.php"
 		key=$GODADDY_KEY
 		token=$GODADDY_TOKEN
@@ -85,11 +85,11 @@ case $plang in
 		dnsapi=$PATH"/python-version/alydns.py"
 		key=$ALY_KEY
 		token=$ALY_TOKEN
-    elif [[ "$pdns" == "txy" ]] ;then
+	elif [[ "$pdns" == "txy" ]] ;then
 		dnsapi=$PATH"/python-version/txydns.py"
 		key=$TXY_KEY
 		token=$TXY_TOKEN
-  elif [[ "$pdns" == "txy" ]]; then
+	elif [[ "$pdns" == "txy" ]]; then
 		dnsapi=$PATH"/python-version/txydns.py"
 		key=$TXY_KEY
 		token=$TXY_TOKEN
