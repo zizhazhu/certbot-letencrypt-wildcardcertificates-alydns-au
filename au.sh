@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #ywdblog@gmail.com 欢迎关注我的书《深入浅出HTTPS：从原理到实战》
 
@@ -7,27 +7,16 @@
 #PHP 命令行路径，如果有需要可以修改
 phpcmd="/usr/bin/php"
 #Python 命令行路径，如果有需要可以修改
-pythoncmd="/usr/bin/python"
+pythoncmd="/usr/local/bin/python"
 
 #填写阿里云的AccessKey ID及AccessKey Secret
 #如何申请见https://help.aliyun.com/knowledge_detail/38738.html
-ALY_KEY=""
-ALY_TOKEN=""
-
 #填写腾讯云的SecretId及SecretKey
 #如何申请见https://console.cloud.tencent.com/cam/capi
-TXY_KEY=""
-TXY_TOKEN=""
-
 #填写华为云的 Access Key Id 及 Secret Access Key
 #如何申请见https://support.huaweicloud.com/devg-apisign/api-sign-provide.html
-HWY_KEY=""
-HWY_TOKEN=""
-
 #GoDaddy的SecretId及SecretKey
 #如何申请见https://developer.godaddy.com/getstarted
-GODADDY_KEY=""
-GODADDY_TOKEN=""
 
 ################ END ##############
 
@@ -56,8 +45,8 @@ case $plang in
 	cmd=$phpcmd
 	if [[ "$pdns" == "aly" ]]; then
 		dnsapi=$PATH"/php-version/alydns.php"
-		key=$ALY_KEY
-		token=$ALY_TOKEN
+		key=$API_KEY
+		token=$API_TOKEN
 	elif [[ "$pdns" == "txy" ]]; then
 		dnsapi="$PATH/php-version/txydns.php"
 		key=$TXY_KEY
@@ -99,8 +88,8 @@ case $plang in
 		token=$HWY_TOKEN
 	elif [[ "$pdns" == "godaddy" ]] ;then
 		dnsapi=$PATH"/python-version/godaddydns.py"
-		key=$GODADDY_KEY
-		token=$GODADDY_TOKEN
+		key=$API_KEY
+		token=$API_TOKEN
 	else 
 		echo "Not support this dns services"
 		exit
